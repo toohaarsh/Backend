@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/stylesheets/add.css">
+</head>
+<body>
+    <div class="form1">
+    <h1>Create a new post</h1>
+    
+        <form action="/createpost" method="post" enctype="multipart/form-data">
+            <input class="input" type="file" name="image">
+            <input class="text" type="text" placeholder="Title" name="title">
+            <input class="text" type="text" placeholder="Description" name="description">
+            <input class="submit" type="submit" value="Create">
+        </form>
+    </div>
+</body>
+</html>

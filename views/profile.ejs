@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="/stylesheets/profile.css">
+        <script src="https://kit.fontawesome.com/ed9c3005bf.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="main">
+            <form hidden id="uploadform" action="/fileupload" method="post" enctype="multipart/form-data">
+                <input type="file" name="image">
+            </form>
+            <div class="box">
+                <div class="profile">
+
+                    <span id="uploadicon" class="icon">
+                        <i class="fa-solid fa-pencil"></i>
+                    </span>
+                    <div class="profile-image">
+                        <img src="/images/<%= user.profileImage %>" alt="">
+                    </div>
+                </div>
+
+                <div class="name">
+                    <h1><%=user.fullname%></h1>
+                </div>
+                <div class="username">
+
+                    <div class="path">
+                        <img src="" alt="">
+                    </div>
+                    <span>@<%=user.username%></span>
+                </div>
+                <div class="edit-profile1">
+                    <button class="edit-profile">Edit Profile</button>
+                    <a href="/logout"><button class="logout">Logout</button></a>
+                </div>
+                <div class="edit-profile1">
+                    <a href="/add"><button class="create-post">Create Post</button></a>
+                </div>
+            </div>
+        </div>
+        <div class='additional'>
+            <div class="created">Created</div>
+            <div class="saved">Saved</div>
+        </div>
+        <div class="cards">
+            <div class="flex">
+                <div class="card">
+                    <div class="pins">
+                        <img class="img" src="/images/<%=user?.posts[0]?.image%>"
+                            alt="Create something..!!">
+                    </div>
+                    <h2><a class="anchor" href="/show/posts">My Pins</a></h2>
+                    <h5> <%=user.posts.length%> pins </h5>
+                </div>
+                <div class="card">
+                    <div class="pins">
+                        <img class="img" src="https://i.pinimg.com/564x/54/0c/2e/540c2e409b101b948c088d886bd6575a.jpg"
+                            alt="">
+                    </div>
+                    <h2>Art</h2>
+                    <h5> 7 pins </h5>
+                </div>
+                <div class="card">
+                    <div class="pins">
+                        <img class="img" src="https://i.pinimg.com/564x/04/56/d5/0456d565006455895374db3bfe4c00e7.jpg"
+                            alt="">
+                    </div>
+                    <h2>Home</h2>
+                    <h5> 14 pins </h5>
+                </div>
+                <div class="card">
+                    <div class="pins">
+                        <img class="img" src="https://i.pinimg.com/564x/3c/55/45/3c55457fee2a871acc3d117052430943.jpg"
+                            alt="">
+                    </div>
+                    <h2>Beach</h2>
+                    <h5> 9 pins </h5>
+                </div>
+                <div class="card">
+                    <div class="pins">
+                        <img class="img" src="https://i.pinimg.com/736x/e1/29/7b/e1297b18a80b87069fec98dc30a201d2.jpg"
+                            alt="">
+                    </div>
+                    <h2>Self Improvement</h2>
+                    <h5> 11 pins </h5>
+                </div>
+                <div class="card">
+                    <div class="pins">
+                        <img class="img" src="https://i.pinimg.com/564x/80/27/ae/8027ae6dcb306e432f303c0e437b7be2.jpg"
+                            alt="">
+                    </div>
+                    <h2>Olsen</h2>
+                    <h5> 9 pins </h5>
+                </div>
+                <div class="card">
+                    <div class="pins">
+                        <img class="img" src="https://i.pinimg.com/564x/f2/64/42/f26442b14b69172e83cfe3bb24b949f9.jpg"
+                            alt="">
+                    </div>
+                    <h2>Cinema</h2>
+                    <h5> 24 pins </h5>
+                </div>
+                <div class="card">
+                    <div class="pins">
+                        <img class="img" src="https://i.pinimg.com/564x/7b/ec/a3/7beca3835b30a31cb9b277300f450306.jpg"
+                            alt="">
+                    </div>
+                    <h2>Quotes</h2>
+                    <h5> 19 pins </h5>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.querySelector("#uploadicon").addEventListener('click', function () {
+                document.querySelector("#uploadform input").click();
+            })
+            document.querySelector("#uploadform input").addEventListener("change", function () {
+                document.querySelector("#uploadform").submit();
+            })
+        </script>
+    </body>
+
+</html>

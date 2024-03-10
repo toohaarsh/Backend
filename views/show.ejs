@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="/stylesheets/show.css">
+    </head>
+
+    <body>
+        <div class="main">
+            <h1> @<%= user.username%>
+            </h1>
+            <div class="cards">
+                <% user.posts.forEach(function(elem){%>
+                    <div class="post">
+                        <div class="card">
+                            <div class="image" style="background-image: url('/images/<%= elem.image %>');">
+
+                            </div>
+
+                            <h5 class="title">
+                                <%=elem.title%>
+                            </h5>
+                        </div>
+                    </div>
+                    <%})%>
+            </div>
+        </div>
+    </body>
+
+</html>
